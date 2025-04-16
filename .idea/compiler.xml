@@ -9,10 +9,12 @@
         <module name="course" />
         <module name="config-server" />
         <module name="eureka-registry" />
-        <module name="student" />
         <module name="spring-gateway" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="student" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

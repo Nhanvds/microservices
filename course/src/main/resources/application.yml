@@ -6,8 +6,9 @@ spring:
      name : course-service
      
   zipkin:
-    enabled: true
-
+    enabled: false
+  sleuth:
+    enabled: false
   datasource: 
     url : ${datasource.url}
     username : ${datasource.username}
