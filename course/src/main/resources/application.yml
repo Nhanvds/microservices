@@ -37,7 +37,12 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: "*"  # Expose tất cả các endpoint bao gồm refresh
+      health:
+        show-details: always
+    endpoint:
+      refresh:
+        enabled: true  # Bật endpoint refresh
 
 eureka:
   client:
