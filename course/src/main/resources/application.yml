@@ -1,47 +1,48 @@
 server:
   port: 8081
 
-spring: 
+spring:
   application:
-     name : course-service
-     
+    name: course-service
+
   zipkin:
     enabled: false
   sleuth:
     enabled: false
-  datasource: 
-    url : ${datasource.url}
-    username : ${datasource.username}
-    password : ${datasource.password}
-  jpa: 
+
+  datasource:
+    url: ${datasource.url}
+    username: ${datasource.username}
+    password: ${datasource.password}
+
+  jpa:
     properties:
       hibernate:
         dialect: ${datasource.dialect}
-        connection: 
+        connection:
           characterEncoding: UTF-8
           CharSet: UTF-8
           useUnicode: true
-    show-sql: true 
+    show-sql: true
     hibernate:
       ddl-auto: none
-      
+
   config:
     import: optional:configserver:http://localhost:8086
-    
+
   profiles:
-    active: prod    
-    
-    
-# enables Spring Boot Actuator end points
+    active: prod
+
 management:
   endpoints:
     web:
       exposure:
-        include: "*"        
-     
+        include: "*"
 
-      
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8083/eureka
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1

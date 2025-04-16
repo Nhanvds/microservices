@@ -24,7 +24,7 @@ public class CourseController {
 	
 	@Autowired CourseService courseService;
 	
-	@Value("${message:default message}")
+	@Value("${message}")
     private String message;
 	
 	@GetMapping("/message")
